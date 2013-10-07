@@ -74,7 +74,7 @@ function loadStylesheet() { (function()
 	      rel:  "stylesheet",
 	      type: "text/css",
 	      //href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css?v=" + Math.random()
-	      href: "stylesheet.css"
+	      href: "https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/stylesheet.css"
 	});
 })(jQuery);}
 
