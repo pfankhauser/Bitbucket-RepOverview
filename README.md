@@ -9,7 +9,7 @@ To use it, drag this link to your bookmark bar: <a href="javascript:(function(){
 javascript:(function(){
 	var script=document.createElement('script');
 		script.src = encodeURI(
-			'https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js'
+			'https://rawgithub.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js'
 		);
 	document.body.appendChild(script);
 })();
