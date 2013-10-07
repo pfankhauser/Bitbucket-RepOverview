@@ -12,8 +12,8 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery < minimumJqueryVersio
 {
 	var done = false;
 	var script = document.createElement("script");
-	script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + minimumJqueryVersion + "/jquery.js";
-	//script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + minimumJqueryVersion + "/jquery.min.js";
+	//script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + minimumJqueryVersion + "/jquery.js";
+	script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + minimumJqueryVersion + "/jquery.min.js";
 	script.onload = script.onreadystatechange = function(){
 		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 			done = true;
@@ -73,8 +73,8 @@ function loadStylesheet() { (function()
 	css.attr({
 	      rel:  "stylesheet",
 	      type: "text/css",
-	      href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css?v=" + Math.random()
-	      //href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css"
+	      //href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css?v=" + Math.random()
+	      href: "stylesheet.css"
 	});
 })(jQuery);}
 

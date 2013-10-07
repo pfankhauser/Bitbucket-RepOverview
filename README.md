@@ -9,6 +9,18 @@ To use it, drag this link to your bookmark bar: <a href="javascript:(function(){
 javascript:(function(){
 	var script=document.createElement('script');
 		script.src = encodeURI(
+			'https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js'
+		);
+	document.body.appendChild(script);
+})();
+```
+
+For debugging:
+
+```javascript
+javascript:(function(){
+	var script=document.createElement('script');
+		script.src = encodeURI(
 			'http://designfankhauser.ch/bitbucket_repoverview/bitbucket_repoverview.js?v='+Math.random()
 		);
 	document.body.appendChild(script);
