@@ -38,7 +38,7 @@ else
 function initRepOverview() { (function()
 {	
 	checkBrowser();
-	loadStylesheet();
+	applyStylesheet();
 	writeStructure();
 	writeTable();
 	initializeUserInteraction();
@@ -59,23 +59,6 @@ function checkBrowser() { (function()
 	jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
 	jQuery.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
 	jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());
-})(jQuery);}
-
-
-
-/////////////////////////////////////////////////////////////////
-// Load Stylesheet
-/////////////////////////////////////////////////////////////////
-function loadStylesheet() { (function()
-{
-	$("head").append("<link>");
-	var css = $("head").children(":last");
-	css.attr({
-	      rel:  "stylesheet",
-	      type: "text/css",
-	      //href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css?v=" + Math.random()
-	      href: "https://rawgithub.com/pfankhauser/Bitbucket-RepOverview/master/stylesheet.css"
-	});
 })(jQuery);}
 
 
@@ -269,3 +252,77 @@ $(window).resize(function()
 	var windowHeight = $(window).height();
 	$("#repOverview").height(windowHeight);
 });
+
+
+/////////////////////////////////////////////////////////////////
+// Load Stylesheet
+/////////////////////////////////////////////////////////////////
+function applyStylesheet() { (function()
+{
+	css = "
+	#repOverview {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    background: rgba(255,255,255,0.93);
+	    width: 100%;
+		z-index: 5000;
+		overflow: scroll;
+	}
+
+	#repOverviewHeader {
+		width: 100%;
+		height: 55px;
+		padding-top: 25px;
+		background-color: rgba(32,81,130,0.92);
+		position: fixed;
+	}
+
+	input#repOverviewSearch {
+		display: block;
+		margin-left:auto;
+		margin-right:auto;
+		width: 400px;
+	}
+
+	table#repOverviewTable {
+		width: 80%;
+	    table-layout: fixed;
+	    margin-left: auto; 
+	    margin-right: auto;
+	    margin-top: 90px;
+	    border-collapse: collapse;
+	}
+
+	table#repOverviewTable td {
+		/* border-width: 1px; */
+		/* border-style: inset; */
+	}
+
+	td.repOverviewColumnAvatar {
+		width: 24px;
+		padding-right: 10px;
+	}
+
+	td.repOverviewColumnName {
+		width: 35%;
+	}
+
+	td.repOverviewColumnDescription {
+		width: 30%;
+	}
+
+	td.repOverviewColumnTime {
+		width: 20%;
+		text-align: right;
+	}
+
+	td.repOverviewColumnAvatar img {
+		border-radius: 12px;
+		width: 24px;
+		height: 24px;
+	}
+	";
+	
+	$("head").append("<style type='text/css'>" + css + "</style>");
+})(jQuery);}
