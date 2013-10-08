@@ -5,7 +5,7 @@ This is a bookmarklet to get a nice overview of all your Bitbucket repositories.
 
 
 ```javascript
-javascript:(function(){var s=document.createElement('script');s.src = encodeURI('https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.min.js');document.body.appendChild(s);})();
+javascript:(function(){var%20s=document.createElement('script');s.src%20=%20encodeURI('https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.min.js');document.body.appendChild(s);})();
 ```
 
 For debugging:
@@ -25,3 +25,5 @@ javascript:(function(){
 - [Overlay div](http://css-tricks.com/snippets/jquery/append-site-overlay-div/)
 - [Table search 1](http://www.willstrohl.com/Blog/PostId/468/Using-jQuery-to-Search-an-HTML-Table)
 - [Table search 2](https://gist.github.com/jakebresnehan/2288330)
+- [CSS Minifier](http://cssminifier.com)
+- [Javascript Compression](http://jscompress.com)
