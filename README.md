@@ -3,16 +3,9 @@ Bitbucket RepOverview
 
 This is a bookmarklet to get a nice overview of all your Bitbucket repositories.
 
-To use it, drag this link to your bookmark bar: <a href="javascript:(function(){ var script=document.createElement('script'); script.src = encodeURI('http://designfankhauser.ch/bitbucket_repoverview/bitbucket_repoverview.js?v='+Math.random()); document.body.appendChild(script); })();">RepOverview</a>
 
 ```javascript
-javascript:(function(){
-	var script=document.createElement('script');
-		script.src = encodeURI(
-			'https://rawgithub.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js'
-		);
-	document.body.appendChild(script);
-})();
+javascript:(function(){var s=document.createElement('script');s.src = encodeURI('https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js');document.body.appendChild(s);})();
 ```
 
 For debugging:
