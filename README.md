@@ -5,7 +5,7 @@ This is a bookmarklet to get a nice overview of all your Bitbucket repositories.
 
 
 ```javascript
-javascript:(function(){var s=document.createElement('script');s.src = encodeURI('https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.js');document.body.appendChild(s);})();
+javascript:(function(){var s=document.createElement('script');s.src = encodeURI('https://raw.github.com/pfankhauser/Bitbucket-RepOverview/master/bitbucket_repoverview.min.js');document.body.appendChild(s);})();
 ```
 
 For debugging:
