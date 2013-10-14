@@ -1,3 +1,6 @@
+// Copyright (c) 2013 Péter Fankhauser, http://designfankhauser.ch
+// Source available at: https://github.com/pfankhauser/Bitbucket-RepOverview
+
 /////////////////////////////////////////////////////////////////
 // Load jQuery
 /////////////////////////////////////////////////////////////////
@@ -202,21 +205,21 @@ function activateSearch() { (function()
 			return $(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
 		};
 	
-	    // Only search when there are 3 or more characters in the search query
-	    if ($('#repOverviewSearch').val().length > 0)
-	    {
+	  // Only search when there are 3 or more characters in the search query
+	  if ($('#repOverviewSearch').val().length > 0)
+	  {
 			$('#repOverviewTable tr').hide();
-			$('#repOverviewTable tr td.repOverviewColumnName:Contains(\'' + jQuery('#repOverviewSearch').val() + '\')').parent().show();
-	    }
-	    else if (jQuery('#repOverviewSearch').val().length == 0)
-	    {
+			$('#repOverviewTable tr td:Contains(\'' + jQuery('#repOverviewSearch').val() + '\')').parent().show();
+	  }
+	  else if (jQuery('#repOverviewSearch').val().length == 0)
+	  {
 			// Reset search
-		    $('#repOverviewSearch').val('');
-		    $('#repOverviewTable tr').show();
+		  $('#repOverviewSearch').val('');
+		  $('#repOverviewTable tr').show();
 			$('#repOverviewSearch').focus();
 		}
  
-	// If there were no matching rows, tell the user
+		// If there were no matching rows, tell the user
     if (jQuery('#repOverviewTable tr:visible').length == 0) {
 
     }
@@ -235,9 +238,9 @@ $(document).keyup(function(e)
   if (e.keyCode == 27) // Esc key
   {
   	// Remove HTML/CSS elements
-	$("#repOverview").fadeOut(function() {
-		$("#repOverview").remove();
-	});
+		$("#repOverview").fadeOut(function() {
+			$("#repOverview").remove();
+		});
 	$('body').css('overflow', 'scroll');
   }
 });
@@ -254,12 +257,23 @@ $(window).resize(function()
 });
 
 
+
 /////////////////////////////////////////////////////////////////
-// Load Stylesheet
+// Load/apply Stylesheet
 /////////////////////////////////////////////////////////////////
 function applyStylesheet() { (function()
 {
-	css = '#repOverview{position:absolute;top:0;left:0;background:rgba(255,255,255,.93);width:100%;z-index:5000;overflow:scroll}#repOverviewHeader{width:100%;height:55px;padding-top:25px;background-color:rgba(32,81,130,.92);position:fixed}input#repOverviewSearch{display:block;margin-left:auto;margin-right:auto;width:400px}table#repOverviewTable{width:80%;table-layout:fixed;margin-left:auto;margin-right:auto;margin-top:90px;border-collapse:collapse}table#repOverviewTable td{}td.repOverviewColumnAvatar{width:24px;padding-right:10px}td.repOverviewColumnName{width:35%}td.repOverviewColumnDescription{width:30%}td.repOverviewColumnTime{width:20%;text-align:right}td.repOverviewColumnAvatar img{border-radius:12px;width:24px;height:24px}';
+	// RELEASE: Comment this out
+	$("head").append("<link>");
+	var css = $("head").children(":last");
+	css.attr({
+	      rel:  "stylesheet",
+	      type: "text/css",
+	      href: "http://designfankhauser.ch/bitbucket_repoverview/stylesheet.css?v=" + Math.random()
+	});
+
+	// RELEASE: Comment in, Copy minified CSS
+	//css = 'MINIFIED CSS GOES HERE';
+	//$("head").append("<style type='text/css'>" + css + "</style>");
 	
-	$("head").append("<style type='text/css'>" + css + "</style>");
 })(jQuery);}
