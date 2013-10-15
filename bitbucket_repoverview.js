@@ -85,6 +85,7 @@ function writeStructure() { (function()
 	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewHeader'));
 	$("#repOverviewHeader").css('top', topPosition + 'px');
 	$("#repOverviewHeader").append("<input type='text' id='repOverviewSearch' name='repOverviewSearch' />");
+	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewTableWrapper'));
 	$("#repOverview").fadeIn();
 })(jQuery);}
 
@@ -104,7 +105,8 @@ function writeTable() { (function()
 			avatar: $(this).children("a.repo-avatar-container").children("img").wrap('<span>').parent().html(),
 			name: $(this).children("h1").html(),
 			description: $(this).children(".description").html(),
-			time: $(this).find("time").wrap('<span>').parent().html()
+			time: $(this).find("time").wrap('<span>').parent().html(),
+			wiki: ""
 		});
 	});
 	
@@ -120,7 +122,8 @@ function writeTable() { (function()
 		avatar: 'repOverviewColumnAvatar',
 		name: 'repOverviewColumnName',
 		description: 'repOverviewColumnDescription',
-		time: 'repOverviewColumnTime'};
+		time: 'repOverviewColumnTime',
+		wiki: 'repOverviewColumnWiki'};
 	
 	for (var i in tableContent)
 	{
@@ -133,7 +136,7 @@ function writeTable() { (function()
 	}
 	
 	// Write to website
-	$('#repOverview').append(table);
+	$('#repOverviewTableWrapper').append(table);
 	
 })(jQuery);}
 
@@ -175,14 +178,14 @@ function loadDetails() { (function()
 			
 			if (wikiFirstParagraph == defaultWikiText)
 			{
-				wikiLinkHtml = '<a href="' + wikiUrl + '">(W)</a>';
+				wikiLinkHtml = '<a class="repOverviewWikiInactive" href="' + wikiUrl + '">W</a>';
 			}
 			else
 			{
 				wikiLinkHtml = '<a href="' + wikiUrl + '">W</a>';
 			}
 
-			currentRow.append($('<td></td>').html(wikiLinkHtml));
+			currentRow.find("td.repOverviewColumnWiki").append(wikiLinkHtml);
 		})
 	});
 
