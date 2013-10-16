@@ -40,13 +40,16 @@ else
 /////////////////////////////////////////////////////////////////
 function initRepOverview() { (function()
 {	
-	checkBrowser();
-	applyStylesheet();
-	writeStructure();
-	writeTable();
-	initializeUserInteraction();
-	activateSearch();
-	loadDetails();
+	if ($("#repOverview").length == 0)
+	{
+		checkBrowser();
+		applyStylesheet();
+		writeStructure();
+		writeTable();
+		initializeUserInteraction();
+		activateSearch();
+		loadDetails();
+	}
 
 })(jQuery);}
 
@@ -102,10 +105,10 @@ function writeTable() { (function()
 	$("article.repository").each(function(index, element)
 	{
 		tableContent.push({
-			avatar: $(this).children("a.repo-avatar-container").children("img").wrap('<span>').parent().html(),
+			avatar: $(this).children("a.repo-avatar-container").children("img").clone().wrap('<span>').parent().html(),
 			name: $(this).children("h1").html(),
 			description: $(this).children(".description").html(),
-			time: $(this).find("time").wrap('<span>').parent().html(),
+			time: $(this).find("time").clone().wrap('<span>').parent().html(),
 			wiki: ""
 		});
 	});
@@ -150,10 +153,10 @@ function initializeUserInteraction() { (function()
 	// Table row hover background
 	$("#repOverviewTable tr").hover(
 	function(){
-		$(this).css("background", "rgba(65,169,243,0.3)");
+		$(this).addClass("repOverviewTableActive");
 	}, 
 	function(){
-		$(this).css("background", "");
+		$(this).removeClass();
 	});
 	
 })(jQuery);}
@@ -234,17 +237,13 @@ function activateSearch() { (function()
 
 
 /////////////////////////////////////////////////////////////////
-// Exit
+// Keyboard inputs
 /////////////////////////////////////////////////////////////////
 $(document).keyup(function(e)
 { 
   if (e.keyCode == 27) // Esc key
   {
-  	// Remove HTML/CSS elements
-		$("#repOverview").fadeOut(function() {
-			$("#repOverview").remove();
-		});
-	$('body').css('overflow', 'scroll');
+  	removeAll();
   }
 });
 
@@ -258,6 +257,23 @@ $(window).resize(function()
 	var windowHeight = $(window).height();
 	$("#repOverview").height(windowHeight);
 });
+
+
+
+/////////////////////////////////////////////////////////////////
+// Remove all HTML of RepOverview
+/////////////////////////////////////////////////////////////////
+function removeAll() { (function()
+{
+	$("#repOverview").fadeOut(function() {
+			$("#repOverview").remove();
+			$("body script").last().remove();
+			$("head").children(":last").remove();
+	});
+	
+	$('body').css('overflow', 'scroll');
+	
+})(jQuery);}
 
 
 
