@@ -88,7 +88,9 @@ function writeStructure() { (function()
 	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewHeader'));
 	$("#repOverviewHeader").css('top', topPosition + 'px');
 	$("#repOverviewHeader").append("<input type='text' id='repOverviewSearch' name='repOverviewSearch' />");
-	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewTableWrapper'));
+	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewOuterWrapper'));
+	$("#repOverviewOuterWrapper").append($('<div></div>').attr('id', 'repOverviewScrollWrapper'));
+	$("#repOverviewScrollWrapper").append($('<div></div>').attr('id', 'repOverviewTableWrapper'));
 	$("#repOverview").fadeIn();
 })(jQuery);}
 
