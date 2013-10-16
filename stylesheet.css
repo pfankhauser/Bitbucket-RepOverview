@@ -63,8 +63,6 @@ table#repOverviewTable tr.repOverviewTableActive {
 table#repOverviewTable td {
 	vertical-align: top;
 	padding: 8px 12px 8px 12px;
-	/* border-width: 1px; */
-	/* border-style: inset; */
 }
 
 table#repOverviewTable td.repOverviewColumnAvatar {
