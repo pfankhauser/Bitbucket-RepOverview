@@ -17,6 +17,7 @@
 	padding-top: 25px;
 	background-color: rgba(32,81,130,0.92);
 	position: fixed;
+	border-bottom: 2px solid rgba(26,67,116,0.73);
 }
 
 input#repOverviewSearch {
@@ -40,6 +41,10 @@ table#repOverviewTable {
   font-size: 13px;
 }
 
+table#repOverviewTable tr.repOverviewTableActive {
+	background-color: rgba(65,169,243,0.3);
+}
+
 table#repOverviewTable td {
 	vertical-align: top;
 	padding: 8px 12px 8px 12px;
@@ -49,7 +54,7 @@ table#repOverviewTable td {
 
 table#repOverviewTable td.repOverviewColumnAvatar {
 	width: 24px;
-	padding: 4px 0 0 0;
+	padding: 4px 0 0 12px;
 }
 
 table#repOverviewTable td.repOverviewColumnAvatar img {
