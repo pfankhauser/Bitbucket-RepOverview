@@ -25,5 +25,4 @@ javascript:(function(){
 - [Overlay div](http://css-tricks.com/snippets/jquery/append-site-overlay-div/)
 - [Table search 1](http://www.willstrohl.com/Blog/PostId/468/Using-jQuery-to-Search-an-HTML-Table)
 - [Table search 2](https://gist.github.com/jakebresnehan/2288330)
-- [CSS Minifier](http://cssminifier.com)
-- [Javascript Compression](http://jscompress.com)
+- [Javascript/CSS Compression](http://refresh-sf.com/yui/)
