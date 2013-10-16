@@ -86,12 +86,11 @@ function writeStructure() { (function()
 	$("#repOverview").css('top', topPosition + 'px');
 	$("#repOverview").height(windowHeight);
 	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewHeader'));
-	$("#repOverviewHeader").css('top', topPosition + 'px');
 	$("#repOverviewHeader").append("<input type='text' id='repOverviewSearch' name='repOverviewSearch' />");
 	$("#repOverview").append($('<div></div>').attr('id', 'repOverviewOuterWrapper'));
 	$("#repOverviewOuterWrapper").append($('<div></div>').attr('id', 'repOverviewScrollWrapper'));
 	$("#repOverviewScrollWrapper").append($('<div></div>').attr('id', 'repOverviewTableWrapper'));
-	$("#repOverview").fadeIn();
+	$("#repOverview").delay(200).fadeIn();
 })(jQuery);}
 
 
@@ -136,7 +135,7 @@ function writeTable() { (function()
 		for (var key in tableContent[i])
 		{
     		row.append($('<td></td>').html(tableContent[i][key]).addClass(columnClasses[key]));
-  		}
+  	}
 		table.append(row);
 	}
 	
@@ -203,8 +202,6 @@ function loadDetails() { (function()
 /////////////////////////////////////////////////////////////////
 function activateSearch() { (function()
 {	
-	// Set focus on search file
-	$('#repOverviewSearch').focus();
 
 	// Execute search (handler)
 	$('#repOverviewSearch').on('keyup', function(){
@@ -231,8 +228,10 @@ function activateSearch() { (function()
     if (jQuery('#repOverviewTable tr:visible').length == 0) {
 
     }
-    
 	});
+	
+	// Set focus on search file (delay necessary because of rendering issues)
+	setTimeout(function() { $('#repOverviewSearch').focus() } , 300);
 	
 })(jQuery);}
 
