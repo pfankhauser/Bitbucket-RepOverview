@@ -1,0 +1,158 @@
+/* Copyright (c) 2014 Péter Fankhauser, http://designfankhauser.ch */
+/* Source available at: http://repoverview.designfankhauser.ch/ */
+
+html, body, p, div, nav, h1, h2, h3, h4, h5, h6, img, input, pre, form, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ffffff;
+	color: #333;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.42857142857143;
+}
+
+a {
+	color: #3b73af;
+	text-decoration: none;
+}
+
+a:focus, a:hover, a:active {
+	text-decoration: underline;
+}
+
+header {
+	top: 0;
+	width: 100%;
+	height: 46px;
+	padding-top: 15px;
+	background-color: rgba(32,81,130,0.95);
+	position: fixed;
+	border-bottom: 1px solid rgb(96,132,176);
+	outline: 1px solid rgb(27,53,85);
+}
+
+#tableWrapper {
+	padding-top: 59px;
+	width: 90%;
+	min-width: 500px;
+	max-width: 1100px;
+  margin: 15px auto 50px auto;
+}
+
+table {
+	width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table tr.active {
+	background-color: rgba(163,200,226,0.3);
+}
+
+table td {
+	vertical-align: top;
+	padding: 8px 12px 8px 12px;
+	/* border-width: 1px; */
+	/* border-style: inset; */
+}
+
+table td.avatar {
+	width: 24px;
+	padding: 4px 0 0 12px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+table td.avatar img {
+	border-radius: 12px;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	box-shadow: 0px 0px 0px 1px #ddd inset;
+}
+
+table td.name {
+	font-weight: bold;
+	overflow: hidden;
+	width: 40%;
+}
+
+table td.description {
+	width: 60%;
+}
+
+table td.time {
+	width: 90px;
+}
+
+table td.wiki {
+	width: 24px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+table td.wiki a {
+	font-weight: bold;
+}
+
+table td.wiki a.inactive {
+	font-weight: normal;
+	color: #cdcdcd;
+}
+
+form#search {
+	position: relative;
+  display: block;
+	margin-left:auto;
+	margin-right:auto;
+	width: 397px;
+}
+
+input#search-input {
+	margin: 0;
+	width: 350px;
+	font-family: Arial, sans-serif;
+  font-size: 14px;
+	color: #1f1f1f;
+  padding: 5px 35px 5px 12px;
+  border: solid 1px #bbb;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 1px 1px 1px #e5e5e5;
+  -moz-box-shadow: inset 1px 1px 1px #e5e5e5;
+  -ms-box-shadow: inset 1px 1px 1px #e5e5e5;
+  -o-box-shadow: inset 1px 1px 1px #e5e5e5;
+  box-shadow: inset 1px 1px 1px #e5e5e5;
+}
+ 
+input#search-input:focus {
+  outline: none;
+}
+ 
+#search-reset {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  width: 5px;
+  height: 19px;
+  text-indent: -9999px;
+  padding: 0 7px;
+  cursor: pointer;
+  background: url(reset_icon.gif) 4px 4px no-repeat #e8e8e8;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+ 
+#search-reset:active {
+    background-color: #ccc;
+}

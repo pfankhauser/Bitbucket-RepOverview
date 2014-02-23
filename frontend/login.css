@@ -1,0 +1,44 @@
+/* Space out content a bit */
+body {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+#footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container {
+    width: 730px !important;
+}
+
+#head {
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#head .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+#head p.login-info {
+	font-size: 12px;
+}
+
+#features {
+  margin: 40px 0;
+}
+
+#features p + h4 {
+  margin-top: 28px;
+}
+
+#screenshot {
+	width: 500px;
+	margin-bottom: 20px;
+}

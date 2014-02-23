@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>RepOverview</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Compact overview for Bitbucket repositories" />
+	<meta name="keywords" content="Bitbucket, git, repositories, overview, list, organize" />
+	<meta name="robots" content="all" />
+	<link rel="icon" href="/favicon.png" type="image/png" />
+	<link rel="stylesheet" href="frontend/overview.css" media="all" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="frontend/overview.js"></script>
+</head>
+
+<body>
+<div id="page">
+
+<header>
+	<form id="search" action="">
+		<input type="text" id="search-input" autocomplete="off" name="Search" placeholder="Search" >
+		<div id="search-reset"></div>
+</form>
+
+	
+</header>
+
+<div id="tableWrapper">
+	<table>
+		<tbody>
+
+			<?php 
+			foreach ($table as &$row) {
+				echo '<tr>';
+				echo '<td class="avatar"><img src="', $row->avatar, '" alt=""></td>';
+				echo '<td class="name"><a href="', $row->url, '" title="', $row->id, '">', $row->name, '</a></td>';
+				echo '<td class="description"><p>', $row->description, '</p></td>';
+				echo '<td class="time"><time datetime="', $row->timestamp, '" title="', $row->date, '">', $row->date, '</time></td>';
+				echo '<td class="wiki">';
+				if ($row->hasWiki) echo '<a href="', $row->wikiUrl, '">W</a>';
+				echo '</td>';
+				echo '</tr>';
+			}
+			?>
+			
+		</tbody>
+	</table>
+</div>
+
+</div>
+</body>
+</html>
