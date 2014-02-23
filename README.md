@@ -26,3 +26,4 @@ javascript:(function(){
 - [Table search 1](http://www.willstrohl.com/Blog/PostId/468/Using-jQuery-to-Search-an-HTML-Table)
 - [Table search 2](https://gist.github.com/jakebresnehan/2288330)
 - [Javascript/CSS Compression](http://refresh-sf.com/yui/)
+- http://www.awmcreative.com/jquery/jquery-search-field-with-clear-icon/
